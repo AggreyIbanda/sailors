@@ -1,5 +1,13 @@
 <?php
 require_once 'header.php';
+
+if (isset($_GET['save']) && isset($_POST['occupied_rooms'])) {
+    foreach ($_POST['occupied_rooms'] as $roomNo) {
+        //ADD INSERT STATEMENETS HERE
+        echo "$roomNo saved, ";
+    }
+}
+
 if (isset($_GET['status'])) {
     $status = $_GET['status'];
     if ($status == "rooms") {
@@ -17,20 +25,20 @@ if (isset($_GET['status'])) {
                     $("form#accom").validate();
                 });
             </script>
-        <strong style="color: #1aa3e8; margin: 0px 0px 20px 30px; text-transform: capitalize">Check the occupied rooms</strong><br/>
+            <strong style="color: #1aa3e8; margin: 0px 0px 20px 30px; text-transform: capitalize">Check the occupied rooms</strong><br/>
 
-            <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST" id="accom" enctype="multipart/form-data">
+            <form action="?save=1" method="POST" id="accom" enctype="multipart/form-data">
 
     <?php
             $count = 0;
             while ($row = mysql_fetch_assoc($result)) {
                 extract($row);
     ?>
-                <p style="text-transform: uppercase; margin: 3px 5px 3px 30px;">   <input type="checkbox" name="<?php echo $roomNumber; ?>" value="<?php echo $roomNumber; ?>"/><strong style="padding-left: 10px">Room <?php echo $roomNumber; ?></strong></p>
+                <p style="text-transform: uppercase; margin: 3px 5px 3px 30px;">   <input type="checkbox" name="occupied_rooms[]" value="<?php echo $roomNumber; ?>"/><strong style="padding-left: 10px">Room <?php echo $roomNumber; ?></strong></p>
 
     <?php $count++;
             } ?>
-                <div style="text-align: center"><input type="submit" value="Save" /></div>
+            <div style="text-align: center"><input type="submit" value="Save" /></div>
         </form>
 <?php
         } else {
