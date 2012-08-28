@@ -12,7 +12,7 @@ if ($checkuser != 0) {
     } else {
         $insert_user = mysql_query("INSERT INTO login (username, password) VALUES ('$username', '$password')");
         if ($insert_user==True) {
-            header("location:../index.php?status==saved");
+            header("location:../index.php?status=saved");
         } else {
 //            echo "error in registration" . mysql_error();
             header("location:../signup.php?status=wrong");
