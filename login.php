@@ -1,4 +1,12 @@
-<?php require_once 'header.php';?>
+<?php require_once 'header.php';
+if (isset($_GET['status'])) {
+    $status = $_GET['status'];
+    if ($status == "logout") {
+?>
+        <strong class="error">You have logged out... You must be logged in to use the system!</strong>
+<?php }}
+?>
+
 <script type="text/javascript">
     $(document).ready(function() {
         $("form#login").validate();
