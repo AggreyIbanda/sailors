@@ -3,23 +3,23 @@
 session_start();
 include 'connect.php';
 $tbl_name = "bar";
-extract($_POST);
 
-$count=0;
-while($count <= count($_POST)/4+1)
-{
+$count = 0;
+$success_count = 0;
+$failure_count = 0;
+while ($count < count($_POST) / 4) {
+    $product_id = $_POST["product_id$count"];
+    $openingStock = $_POST["openingStock$count"];
+    $purchases = $_POST["purchases$count"];
+    $closingStock = $_POST["closingStock$count"];
     $query = "INSERT INTO $tbl_name (product,openingStock, purchases , closingStock)
-                        VALUES ('$product+$count','$openingStock+$count', '$purchases+$count', '$closingStock+$count')";
-    $result = mysql_query($query) or die("Error executing '$query':" . mysql_error());
-echo  var_dump($query);
+                        VALUES ('$product_id','$openingStock', '$purchases', '$closingStock')";
+    if (mysql_query($query)) {
+        $success_count++;
+    } else {
+        $failure_count++;
+    }
     $count++;
 }
-
-
-
-if (mysql_query($query) == true) {
-    header("location: ../bar.php?status=saved");
-} else {
-    header("location: ../bar.php?status=wrong");
-}
+header("location: ../bar.php?success=$success_count&failures=$failure_count");
 ?>
