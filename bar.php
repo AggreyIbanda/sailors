@@ -13,6 +13,13 @@ if ($count >= 1) {
             $("form#bar").validate();
         });
     </script>
+<?php
+    if (isset($_GET['success'])) {
+        extract($_GET);
+        echo "<font color=red>Successfully saved $success and $failures records failed</font>";
+    }
+?>
+
     <form action="actions/bar.php" id="bar" enctype="multipart/form-data" method="post">
         <table>
             <tr><th></th> <th>Opening Stock</th><th>Bottles Purchased</th><th>Closing stock</th></tr>
@@ -23,7 +30,7 @@ if ($count >= 1) {
             extract($row);
         ?>
             <tr>
-                <td><?php echo $product; ?><input type="hidden" value="<?php echo $product; ?>"name="<?php echo $product+$count; ?>"/></td>
+                <td><?php echo $product; ?><input type="hidden" value="<?php echo $id; ?>"name="product_id<?php echo $count; ?>"/></td>
                 <td><input type="text" name="openingStock<?php echo $count; ?>" class="required"/></td>
                 <td><input type="text" name="purchases<?php echo $count; ?>" class="required"/></td>
                 <td><input type="text" name="closingStock<?php echo $count; ?>" class="required"/> </td>
