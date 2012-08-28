@@ -13,12 +13,7 @@ if ($count >= 1) {
             $("form#bar").validate();
         });
     </script>
-<?php
-    if (isset($_GET['success'])) {
-        extract($_GET);
-        echo "<strong><font color=green>Successfully saved $success , and $failures records failed</font></strong>";
-    }
-?>
+
 
     <form action="actions/bar.php" id="bar" enctype="multipart/form-data" method="post">
         <table>

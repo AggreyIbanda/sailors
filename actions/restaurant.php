@@ -8,7 +8,7 @@ $query = "INSERT INTO $tbl_name (dateRecieved,amountRecieved)
 //$result = mysql_query($query) or die("Error executing '$query':" . mysql_error());
 
 if (mysql_query($query) == true) {
-    header("location: ../restaurant.php?status=saved");
+    header("location: ../index.php?status=saved");
 } else {
     header("location: ../restaurant.php?status=wrong");
 }

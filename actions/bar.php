@@ -12,8 +12,18 @@ while ($count < count($_POST) / 4) {
     $openingStock = $_POST["openingStock$count"];
     $purchases = $_POST["purchases$count"];
     $closingStock = $_POST["closingStock$count"];
-    $query = "INSERT INTO $tbl_name (product,openingStock, purchases , closingStock)
-                        VALUES ('$product_id','$openingStock', '$purchases', '$closingStock')";
+//    calculating the total number of units sold
+    $unitsSold = intval($openingStock) + intval($purchases) - intval($closingStock);
+//    clalculating total sales per item
+    $sql = "SELECT  sellingPrice FROM products WHERE id='$product_id' ";
+    $result = mysql_query($sql);
+    $row = mysql_fetch_assoc($result);
+    extract($row);
+    $sellingPrice=$sellingPrice;
+    $totalSales = $unitsSold * intval($sellingPrice);
+//saving all the details to the database
+    $query = "INSERT INTO $tbl_name (product,openingStock, purchases , closingStock,unitsSold,totalSales)
+                        VALUES ('$product_id','$openingStock', '$purchases', '$closingStock','$unitsSold','$totalSales')";
     if (mysql_query($query)) {
         $success_count++;
     } else {
@@ -21,5 +31,6 @@ while ($count < count($_POST) / 4) {
     }
     $count++;
 }
-header("location: ../bar.php?success=$success_count&failures=$failure_count");
+//var_dump($sellingPrice);
+header("location: ../index.php?success=$success_count&failures=$failure_count");
 ?>
