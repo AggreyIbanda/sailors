@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 28, 2012 at 06:26 AM
+-- Generation Time: Aug 28, 2012 at 07:52 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
@@ -23,6 +23,18 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `accommodation`
+--
+
+CREATE TABLE IF NOT EXISTS `accommodation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `roomN0` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `bar`
 --
 
@@ -36,20 +48,40 @@ CREATE TABLE IF NOT EXISTS `bar` (
   `product` varchar(50) NOT NULL,
   `transactionDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=80 ;
 
 --
 -- Dumping data for table `bar`
 --
 
 INSERT INTO `bar` (`id`, `openingStock`, `closingStock`, `purchases`, `unitsSold`, `totalSales`, `product`, `transactionDate`) VALUES
-(15, 0, 0, 0, 0, 0, '+0', '2012-08-27 19:22:09'),
-(16, 1, 1, 1, 0, 0, '+1', '2012-08-27 19:22:09'),
-(17, 2, 2, 2, 0, 0, '+2', '2012-08-27 19:22:10'),
-(18, 3, 3, 3, 0, 0, '+3', '2012-08-27 19:22:10'),
-(19, 4, 4, 4, 0, 0, '+4', '2012-08-27 19:22:10'),
-(20, 5, 5, 5, 0, 0, '+5', '2012-08-27 19:22:10'),
-(21, 5, 5, 5, 0, 0, '+5', '2012-08-27 19:22:10');
+(77, 10, 4, 40, 46, 6900, '3', '2012-08-28 11:23:55'),
+(78, 10, 30, 50, 30, 4500, '3', '2012-08-28 11:24:09'),
+(79, 20, 20, 100, 100, 15000, '3', '2012-08-28 11:24:46');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `butchery`
+--
+
+CREATE TABLE IF NOT EXISTS `butchery` (
+  `openingStock` int(11) NOT NULL AUTO_INCREMENT,
+  `purchases` int(11) NOT NULL,
+  `waste` int(11) NOT NULL,
+  `closingStock` int(11) NOT NULL,
+  PRIMARY KEY (`openingStock`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10001 ;
+
+--
+-- Dumping data for table `butchery`
+--
+
+INSERT INTO `butchery` (`openingStock`, `purchases`, `waste`, `closingStock`) VALUES
+(54, 4, 44, 4),
+(333, 3333, 33, 33333),
+(9999, 999999999, 99, 2147483647),
+(10000, 222, 2, 22);
 
 -- --------------------------------------------------------
 
@@ -62,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `login` (
   `username` varchar(50) DEFAULT NULL,
   `password` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `login`
@@ -74,7 +106,10 @@ INSERT INTO `login` (`id`, `username`, `password`) VALUES
 (5, 'Admininstrator', 'admin'),
 (6, 'mutheu', 'mut'),
 (7, 'jose', 'nn'),
-(8, 'gladys', 'waka');
+(8, 'gladys', 'waka'),
+(9, 'katheu', 'yes'),
+(10, 'tick', 'tick'),
+(11, 'tick3', '44');
 
 -- --------------------------------------------------------
 
@@ -97,10 +132,77 @@ CREATE TABLE IF NOT EXISTS `products` (
 --
 
 INSERT INTO `products` (`id`, `product`, `Description`, `buyingPrice`, `sellingPrice`, `businessUnit`) VALUES
-(1, '500Ml Tusker', '', 100, 120, 'bar'),
-(2, '350ml Smirnof Ice', '', 200, 250, 'bar'),
-(3, 'Alvaro', '', 100, 150, 'bar'),
-(4, 'Snapps', '', 120, 125, 'bar');
+(3, 'Alvaro', '', 100, 150, 'bar');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `restaurant`
+--
+
+CREATE TABLE IF NOT EXISTS `restaurant` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `amountRecieved` int(11) NOT NULL,
+  `dateRecieved` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+
+--
+-- Dumping data for table `restaurant`
+--
+
+INSERT INTO `restaurant` (`id`, `amountRecieved`, `dateRecieved`) VALUES
+(9, 500000, '2012-07-31'),
+(10, 500000, '2012-08-07'),
+(11, 50000023, '2012-08-07'),
+(12, 34343, '2012-08-21'),
+(13, 50000023, '2012-08-29'),
+(14, 44, '2012-09-03'),
+(15, 400, '2012-08-01'),
+(16, 400, '2012-08-01'),
+(17, 444444, '2012-09-05');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rooms`
+--
+
+CREATE TABLE IF NOT EXISTS `rooms` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `roomNumber` int(11) NOT NULL,
+  `roomType` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `rooms`
+--
+
+INSERT INTO `rooms` (`id`, `roomNumber`, `roomType`) VALUES
+(1, 401, 1),
+(2, 407, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `roomtypes`
+--
+
+CREATE TABLE IF NOT EXISTS `roomtypes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `roomType` varchar(50) NOT NULL,
+  `amountPerNight` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `roomtypes`
+--
+
+INSERT INTO `roomtypes` (`id`, `roomType`, `amountPerNight`) VALUES
+(1, 'SINLE', 400),
+(2, 'SELF-CONTAINED', 600);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
