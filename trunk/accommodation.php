@@ -1,42 +1,56 @@
 <?php
 require_once 'header.php';
-include 'actions/connect.php';
-
-//Displaying the table
-$sql = "SELECT * FROM products WHERE businessUnit='accommodation' ";
-$result = mysql_query($sql);
-$count = mysql_num_rows($result);
-if ($count >= 1) {
+if (isset($_GET['status'])) {
+    $status = $_GET['status'];
+    if ($status == "rooms") {
 ?>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $("form#accommodation").validate();
-        });
-    </script>
-<form action="actions/accommodation.php" id="accommodation" enctype="multipart/form-data" method="post">
-        <table>
-            <tr><th></th> <th>Opening Stock</th><th>Bottles Purchased</th><th>Closing stock</th></tr>
-
-        <?php
-        $count = 0;
-        while ($row = mysql_fetch_assoc($result)) {
-            extract($row);
-        ?>
-            <tr>
-                <td><?php echo $product; ?><input type="hidden" value="<?php echo $product; ?>"name="<?php echo $product+$count; ?>"/></td>
-                <td><input type="text" name="openingStock<?php echo $count; ?>" class="required"/></td>
-                <td><input type="text" name="purchases<?php echo $count; ?>" class="required"/></td>
-                <td><input type="text" name="closingStock<?php echo $count; ?>" class="required"/> </td>
-            </tr>
-
-        <?php $count++;
-        } ?>
-        <tr><td></td><td></td><td></td><td><input type="submit" value="Save" /></td></tr>
-    </table>
-</form>
+        <!--record occupied rooms-->
 <?php
-    } else {
-        echo "No products have been saved under bar";
-    }
+        include 'actions/connect.php';
+        $sql = "SELECT roomNumber FROM rooms ORDER BY roomNumber";
+        $result = mysql_query($sql);
+        $count = mysql_num_rows($result);
+        if ($count >= 1) {
 ?>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $("form#accom").validate();
+                });
+            </script>
+        <strong style="color: #1aa3e8; margin: 0px 0px 20px 30px; text-transform: capitalize">Check the occupied rooms</strong><br/>
+
+            <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST" id="accom" enctype="multipart/form-data">
+
+    <?php
+            $count = 0;
+            while ($row = mysql_fetch_assoc($result)) {
+                extract($row);
+    ?>
+                <p style="text-transform: uppercase; margin: 3px 5px 3px 30px;">   <input type="checkbox" name="<?php echo $roomNumber; ?>" value="<?php echo $roomNumber; ?>"/><strong style="padding-left: 10px">Room <?php echo $roomNumber; ?></strong></p>
+
+    <?php $count++;
+            } ?>
+                <div style="text-align: center"><input type="submit" value="Save" /></div>
+        </form>
+<?php
+        } else {
+            echo "No products have been saved under bar";
+        }
+?>
+        <!--end of recording rooms occupancy-->
+
+<?php } else if ($status == "cost") {
+?>
+        <!--record purchased items for rooms-->
+
+        <!--End of recording rooms purchases and other costs-->
+
+<?php
+    }
+} else {
+?>
+    <p style="margin: 100px 100px 100px 250px;"><a href="?status=rooms" >Record Room Occupation</a></p>
+    <p style="margin: 100px 100px 100px 250px;"><a href="?status=cost">Record Items Purchased</a></p>
+<?php } ?>
+
 <?php require_once 'footer.php'; ?>

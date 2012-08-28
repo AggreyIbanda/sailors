@@ -3,6 +3,10 @@ require_once 'header.php';
 if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
 }
+if (isset($_GET['success'])) {
+        extract($_GET);
+        echo "<strong><font color=green>Successfully saved $success , and $failures records failed</font></strong><br/>";
+    }
 if (isset($_GET['status'])) {
     $status = $_GET['status'];
     if ($status == "wrong") {
