@@ -41,7 +41,16 @@
                         <div id="templatemo_menu_bg_l"></div>
                         <div id="templatemo_menu_bg_r">
                             <ul>
-
+                                <?php if (isset($_SESSION['username'])) { ?>
+                                <li><a href="index.php"><b>HOME</b></a></li>
+                                <li><a href="bar.php"><b>BAR</b></a></li>
+                                <li><a href="butchery.php"><b>BUTCHERY</b></a></li>
+                                <li><a href="restaurant.php"><b>RESTAURANT</b></a></li>
+                                <li><a href="accommodation.php"><b>ROOMS</b></a></li>
+                                <li><a href="logout.php"><b>LOGOUT</b></a></li>
+                                <?php } else{ ?>
+                                <li><a href="login.php"><b>LOGIN</b></a></li>
+                                <?php } ?>
 
                             </ul>
                         </div>

@@ -16,7 +16,7 @@ if ($count >= 1) {
 <?php
     if (isset($_GET['success'])) {
         extract($_GET);
-        echo "<font color=red>Successfully saved $success and $failures records failed</font>";
+        echo "<strong><font color=green>Successfully saved $success , and $failures records failed</font></strong>";
     }
 ?>
 

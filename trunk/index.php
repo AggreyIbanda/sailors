@@ -7,6 +7,7 @@ if (isset($_GET['status'])) {
     $status = $_GET['status'];
     if ($status == "wrong") {
 ?>
+
         <strong class="error">Something went wrong so your details have not been saved!</strong><br/>
 <?php } else if ($status == "saved") {?>
         <strong class="notification">Details have been recorded successfully!</strong><br/>
