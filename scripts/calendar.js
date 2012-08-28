@@ -493,7 +493,7 @@
             '.scw           {padding:1px;vertical-align:middle;}'       +
             'iframe.scw     {position:absolute;z-index:' + scwZindex    +
                             ';top:0px;left:0px;visibility:hidden;'      +
-                            'width:1px;height:1px;}'                    +
+                            'width:0px;height:0px;}'                    +
             'table.scw      {padding:0px;visibility:hidden;'            +
                             'position:absolute;cursor:default;'         +
                             'width:200px;top:0px;left:0px;'             +
@@ -511,9 +511,9 @@
             '/* IMPORTANT:  The SCW calendar script requires all '      +
             '               the classes defined here.'                  +
             '*/'                                                        +
-            'table.scw      {padding:       1px;'                       +
+            'table.scw      {padding:       0px;'                       +
                             'vertical-align:middle;'                    +
-                            'border:        ridge 2px;'                 +
+                            'border:        ridge 0px;'                 +
                             'font-size:     10pt;'                      +
                             'font-family:   ' +
                                    'Verdana,Arial,Helvetica,Sans-Serif;'+
@@ -522,13 +522,13 @@
             'td.scwHead                 {padding:       0px 0px;'       +
                                         'text-align:    center;}'       +
             'td.scwDrag                 {font-size:     8pt;}'          +
-            'select.scwHead             {margin:        3px 1px;'       +
+            'select.scwHead             {margin:        0px 0px;'       +
                                         'text-align:    center;}'       +
-            'input.scwHead              {height:        22px;'          +
-                                        'width:         22px;'          +
+            'input.scwHead              {height:        20px;'          +
+                                        'width:         20px;'          +
                                         'vertical-align:middle;'        +
                                         'text-align:    center;'        +
-                                        'margin:        2px 1px;'       +
+                                        'margin:        0px 1px;'       +
                                         'font-weight:   bold;'          +
                                         'font-size:     10pt;'          +
                                         'font-family:   fixedSys;}'     +
@@ -572,9 +572,9 @@
                                         'vertical-align:    middle;}'   +
             '/* Blend the colours into your page here...    */'         +
             '/* Calendar background */'                                 +
-            'table.scw                  {background-color:  #333333;}'  +
+            'table.scw                  {background-color:  #1F5C7B;}'  +
             '/* Drag Handle */'                                         +
-            'td.scwDrag                 {background-color:  #9999CC;'   +
+            'td.scwDrag                 {background-color:  #0083db;'   +
                                         'color:             #CCCCFF;}'  +
             '/* Week number heading */'                                 +
             'td.scwWeekNumberHead       {color:             #6666CC;}'  +
@@ -582,20 +582,20 @@
             'td.scwWeek                 {color:             #000000;}'  +
             '/* Week numbers */'                                        +
             'td.scwWeekNo               {background-color:  #776677;'   +
-                                        'color:             #CCCCCC;}'  +
+                                        'color:             #ffffff;}'  +
             '/* Enabled Days */'                                        +
             '/* Week Day */'                                            +
-            'td.scwCells                {background-color:  #CCCCCC;'   +
+            'td.scwCells                {background-color:  #ffffff;'   +
                                         'color:             #000000;}'  +
             '/* Day matching the input date */'                         +
             'td.scwInputDate            {background-color:  #CC9999;'   +
                                         'color:             #FF0000;}'  +
             '/* Weekend Day */'                                         +
-            'td.scwCellsWeekend         {background-color:  #CCCCCC;'   +
-                                        'color:             #CC6666;}'  +
+            'td.scwCellsWeekend         {background-color:  #cccccc;'   +
+                                        'color:             maroon;}'  +
             '/* Day outside the current month */'                       +
-            'td.scwCellsExMonth         {background-color:  #CCCCCC;'   +
-                                        'color:             #666666;}'  +
+            'td.scwCellsExMonth         {background-color:  #cccccc;'   +
+                                        'color:             #000000;}'  +
             '/* Today selector */'                                      +
             'td.scwNow                  {background-color:  #990000;'   +
                                         'color:             #FFFFFF;}'  +
@@ -618,19 +618,19 @@
             '*/'                                                        +
             '/* Active cells */'                                        +
             'td.scwCells:hover,'                                        +
-            'td.scwCellsHover           {background-color:  #ffffff;'   +
+            'td.scwCellsHover           {background-color:  #990000;'   +
                                         'cursor:            pointer;'   +
-                                        'color:             #000000;}'  +
+                                        'color:             #ffffff;}'  +
             '/* Day matching the input date */'                         +
             'td.scwInputDate:hover,'                                    +
-            'td.scwInputDateHover       {background-color:  #ffffff;'   +
+            'td.scwInputDateHover       {background-color:  #990000;'   +
                                         'cursor:            pointer;'   +
-                                        'color:             #000000;}'  +
+                                        'color:             #ffffff;}'  +
             '/* Weekend cells */'                                       +
             'td.scwCellsWeekend:hover,'                                 +
-            'td.scwCellsWeekendHover    {background-color:  #ffffff;'   +
+            'td.scwCellsWeekendHover    {background-color:  #cccccc;'   +
                                         'cursor:            pointer;'   +
-                                        'color:             #000000;}'  +
+                                        'color:             blue;}'  +
             '/* Day outside the current month */'                       +
             'td.scwCellsExMonth:hover,'                                 +
             'td.scwCellsExMonthHover    {background-color:  #ffffff;'   +
@@ -638,7 +638,8 @@
                                         'color:             #000000;}'  +
             '/* Today selector */'                                      +
             'td.scwNow:hover,'                                          +
-            'td.scwNowHover             {color:             #ffffff;'   +
+            'td.scwNowHover             {background-color:  #ffffff;'   +
+                                        'color:             maroon;'      +
                                         'cursor:            pointer;'   +
                                         'font-weight:       bold;}'     +
             '/* Disabled cells */'                                      +
@@ -654,7 +655,7 @@
             '/* Day outside the current month */'                       +
             'td.scwCellsExMonthDisabled {background-color:  #999999;'   +
                                         'color:             #666666;}'  +
-            'td.scwNowDisabled          {background-color:  #6666CC;'   +
+            'td.scwNowDisabled          {background-color:  #f00;'   +
                                         'color:             #FFFFFF;}'  +
         '</style>'
                     );
