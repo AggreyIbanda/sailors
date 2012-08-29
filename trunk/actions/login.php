@@ -18,11 +18,11 @@ if ($count == 1) {
     $_SESSION['username'] = $username;
     if ($username == Admin) {
         $_SESSION['type'] = "admin";
+        header("location:../admin.php");
     } else {
         $_SESSION['type'] = "staff";
+        header("location:../index.php");
     }
-
-    header("location:../index.php");
 } else {
     header("location: ../login.php?status=wrong");
 }

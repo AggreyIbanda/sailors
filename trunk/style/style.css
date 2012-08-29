@@ -1,6 +1,7 @@
 /*
 CSS Credit: http://www.templatemo.com/
 */
+
 form{
     margin: 30px;
 }
@@ -13,7 +14,7 @@ form{
     border-style: inset;
     border-color: #8fdaff;
     border-width: 2px;
-/*    padding: 5px;*/
+    /*    padding: 5px;*/
     margin:20px 30px 10px 10px;
 }
 form label{
@@ -57,11 +58,15 @@ table{
     margin: 10px;
     width: 90%;
     text-align: left;
-    border-style: outset;
+    border-style: ridge;
     border-color: #1f5c7b;
     border-width: 1px;
+    background-color: gainsboro;
+    border-color: #cccccc;
+
 
 }
+
 .lt {
     height: 10px;
     background: #6E6E6E url(../images/lt.gif) no-repeat;
@@ -95,8 +100,8 @@ fieldset{
 }
 
 /*
-	project:  HealthCenter
-	author:   lostwarrior
+        project:  HealthCenter
+        author:   lostwarrior
 */
 *
 {
@@ -279,7 +284,7 @@ a:hover{
 
 
 #templatemo_menu #templatemo_menu_bg_r{
-/*    width: 97%;*/
+    /*    width: 97%;*/
     height: 38px;
     float: left;
     background: url(../images/templatemo_menu_bg_r.jpg) right bottom no-repeat;

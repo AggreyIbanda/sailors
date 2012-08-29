@@ -41,15 +41,29 @@
                         <div id="templatemo_menu_bg_l"></div>
                         <div id="templatemo_menu_bg_r">
                             <ul>
-                                <?php if (isset($_SESSION['username'])) { ?>
-                                <li><a href="index.php"><b>HOME</b></a></li>
-                                <li><a href="bar.php"><b>BAR</b></a></li>
-                                <li><a href="butchery.php"><b>BUTCHERY</b></a></li>
-                                <li><a href="restaurant.php"><b>RESTAURANT</b></a></li>
-                                <li><a href="accommodation.php"><b>ROOMS</b></a></li>
-                                <li><a href="logout.php"><b>LOGOUT</b></a></li>
-                                <?php } else{ ?>
-                                <li><a href="login.php"><b>LOGIN</b></a></li>
+                                <?php
+                                if (isset($_SESSION['username'])) {
+                                    if (isset($_SESSION['type'])) {
+                                        $type = $_SESSION['type'];
+                                        if ($type == 'admin') {
+                                            ?>
+                                            <li><a href="admin.php"><b>HOME</b></a></li>
+                                        <?php } else { ?>
+                                            <li><a href="index.php"><b>HOME</b></a></li>
+                                             <li><a href="bar.php"><b>BAR</b></a></li>
+                                    <li><a href="butchery.php"><b>BUTCHERY</b></a></li>
+                                    <li><a href="restaurant.php"><b>RESTAURANT</b></a></li>
+                                    <li><a href="accommodation.php"><b>ROOMS</b></a></li>
+                                            <?php
+                                        }
+                                    }
+                                    ?>
+
+                                   
+                                    <li><a href="logout.php"><b>LOGOUT</b></a></li>
+                                <?php } else { ?>
+                                    <li><a href="login.php"><b>LOGIN</b></a></li>
+                                    <li><a href="login.php?status=Admin"><b>ADMIN</b></a></li>
                                 <?php } ?>
 
                             </ul>
@@ -69,7 +83,7 @@
                     <div id="templatemo_left">
                         <div class="templatemo_section">
                             <div class="templatemo_section_top_pc">
-                        	Sailors
+                                Sailors
 
                             </div>
                             <div class="templatemo_section_middle">
