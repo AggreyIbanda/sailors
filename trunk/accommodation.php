@@ -53,22 +53,24 @@ if (isset($_GET['status'])) {
                     $("form#accom").validate();
                 });
             </script>
+            <div class="back"><a href="?" >&LT;&LT;&LT; Back to previous page</a></div>
+            <div class="lt"></div>
+            <div class="lbox">
+                <form action="?save=1" method="POST" id="accom" enctype="multipart/form-data">
+                    <strong style="color: #1aa3e8; margin: 0px 0px 20px 30px;">Date:     <input onclick='scwShow(this,event);' id="accomdate"  name="dateOccupied" class="required"/></strong><br/>
+                    <strong style="color: #1aa3e8; margin: 0px 0px 20px 30px; text-transform: capitalize">Check the occupied rooms</strong><br/>
 
-            <form action="?save=1" method="POST" id="accom" enctype="multipart/form-data">
-                <strong style="color: #1aa3e8; margin: 0px 0px 20px 30px;">Date:     <input onclick='scwShow(this,event);' id="accomdate"  name="dateOccupied" class="required"/></strong><br/>
-                <strong style="color: #1aa3e8; margin: 0px 0px 20px 30px; text-transform: capitalize">Check the occupied rooms</strong><br/>
+                    <?php
+                    $count = 0;
+                    while ($row = mysql_fetch_assoc($result)) {
+                        extract($row);
+                        ?>
+                        <p style="text-transform: uppercase; margin: 3px 5px 3px 30px;">   <input type="checkbox" name="occupied_rooms[]" value="<?php echo $roomNumber; ?>"/><strong style="padding-left: 10px">Room <?php echo $roomNumber; ?></strong></p>
 
-                <?php
-                $count = 0;
-                while ($row = mysql_fetch_assoc($result)) {
-                    extract($row);
-                    ?>
-                    <p style="text-transform: uppercase; margin: 3px 5px 3px 30px;">   <input type="checkbox" name="occupied_rooms[]" value="<?php echo $roomNumber; ?>"/><strong style="padding-left: 10px">Room <?php echo $roomNumber; ?></strong></p>
-
-                    <?php $count++;
-                } ?>
-                <div style="text-align: center"><input type="submit" value="Save" /></div>
-            </form>
+                        <?php $count++;
+                    } ?>
+                    <div style="text-align: center"><input type="submit" value="Save" /></div>
+                </form></div>
             <?php
         } else {
             echo "No rooms available";
@@ -83,7 +85,7 @@ if (isset($_GET['status'])) {
                 $("form#rooms").validate();
             });
         </script>
-
+        <div class="back"><a href="?" >&LT;&LT;&LT; Back to previous page</a></div>
         <div class="lt"></div>
         <div class="lbox">
             <form id="rooms" action="actions/accommodation.php" enctype="multipart/form-data" method="post">
@@ -117,6 +119,7 @@ if (isset($_GET['status'])) {
     }
 } else {//dissplay these links
     ?>
+        <div class="back"><a href="index.php" >&LT;&LT;&LT; Back</a></div>
     <p style="margin: 100px 100px 100px 250px;"><a href="?status=rooms" >Record Room Occupation</a></p>
     <p style="margin: 100px 100px 100px 250px;"><a href="?status=cost">Record Items Purchased</a></p>
 <?php } ?>

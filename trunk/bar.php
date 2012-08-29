@@ -13,7 +13,7 @@ if ($count >= 1) {
             $("form#bar").validate();
         });
     </script>
-
+    <div class="back"><a href="index.php" >&LT;&LT;&LT; Back to previous page</a></div>
 
     <form action="actions/bar.php" id="bar" enctype="multipart/form-data" method="post">
 
