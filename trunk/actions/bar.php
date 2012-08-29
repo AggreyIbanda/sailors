@@ -7,7 +7,8 @@ $tbl_name = "bar";
 $count = 0;
 $success_count = 0;
 $failure_count = 0;
-while ($count < count($_POST) / 4) {
+$transactionDate = $_POST["transactionDate"];
+while ($count < count($_POST) / 4-1) {
     $product_id = $_POST["product_id$count"];
     $openingStock = $_POST["openingStock$count"];
     $purchases = $_POST["purchases$count"];
@@ -22,8 +23,8 @@ while ($count < count($_POST) / 4) {
     $sellingPrice=$sellingPrice;
     $totalSales = $unitsSold * intval($sellingPrice);
 //saving all the details to the database
-    $query = "INSERT INTO $tbl_name (product,openingStock, purchases , closingStock,unitsSold,totalSales)
-                        VALUES ('$product_id','$openingStock', '$purchases', '$closingStock','$unitsSold','$totalSales')";
+    $query = "INSERT INTO $tbl_name (product,openingStock, purchases , closingStock,unitsSold,totalSales,transactionDate)
+                        VALUES ('$product_id','$openingStock', '$purchases', '$closingStock','$unitsSold','$totalSales','$transactionDate')";
     if (mysql_query($query)) {
         $success_count++;
     } else {
@@ -31,6 +32,5 @@ while ($count < count($_POST) / 4) {
     }
     $count++;
 }
-//var_dump($sellingPrice);
 header("location: ../index.php?success=$success_count&failures=$failure_count");
 ?>
