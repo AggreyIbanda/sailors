@@ -13,7 +13,7 @@ if (isset($_GET['status'])) {
         $("form#restaurant").validate();
     });
 </script>
-
+<div class="back"><a href="index.php" >&LT;&LT;&LT; Back to previous page</a></div>
 <div class="lt"></div>
 <div class="lbox">
     <form action="actions/restaurant.php" id="restaurant" enctype="multipart/form-data" method="post">

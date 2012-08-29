@@ -17,7 +17,7 @@ if (isset($_GET['status'])) {
         <strong class="error">Your passwords don't match!</strong>
 <?php }}
 ?>
-
+<div class="back"><a href="index.php" >&LT;&LT;&LT; Back to previous page</a></div>
 <div class="lt"></div>
 <div class="lbox">
     <form id="signup" action="actions/signup.php" enctype="multipart/form-data" method="post">

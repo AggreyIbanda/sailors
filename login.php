@@ -12,7 +12,6 @@ if (isset($_GET['status'])) {
         $("form#login").validate();
     });
 </script>
-
 <div class="lt"></div>
 <div class="lbox">
     <form id="login" action="actions/login.php" enctype="multipart/form-data" method="post">

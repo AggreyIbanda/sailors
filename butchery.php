@@ -7,7 +7,7 @@ require_once 'header.php';
         $("form#butchery").validate();
     });
 </script>
-
+<div class="back"><a href="index.php" >&LT;&LT;&LT; Back to previous page</a></div>
 <div class="lt"></div>
 <div class="lbox">
     <form id="butchery" action="actions/butchery.php" enctype="multipart/form-data" method="post">

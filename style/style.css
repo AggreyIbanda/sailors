@@ -1,6 +1,13 @@
 /*
 CSS Credit: http://www.templatemo.com/
 */
+form{
+    margin: 30px;
+}
+.back a{
+    color: darkorange;
+    margin: 50px;
+}
 #templatemo_right img{
 
     border-style: inset;
