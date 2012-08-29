@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 28, 2012 at 07:52 PM
+-- Generation Time: Aug 29, 2012 at 01:49 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
@@ -29,8 +29,28 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `accommodation` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `roomN0` int(11) NOT NULL,
+  `dateOccupied` date NOT NULL,
+  `amountRecieved` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
+
+--
+-- Dumping data for table `accommodation`
+--
+
+INSERT INTO `accommodation` (`id`, `roomN0`, `dateOccupied`, `amountRecieved`) VALUES
+(19, 401, '2012-08-30', 400),
+(20, 402, '2012-08-30', 400),
+(21, 407, '2012-08-30', 600),
+(22, 408, '2012-08-30', 600),
+(23, 401, '2012-08-21', 400),
+(24, 401, '2012-08-21', 400),
+(25, 401, '2012-08-14', 400),
+(26, 402, '2012-08-14', 400),
+(27, 401, '2012-08-12', 400),
+(28, 402, '2012-08-12', 400),
+(29, 407, '2012-08-12', 600),
+(30, 408, '2012-08-12', 600);
 
 -- --------------------------------------------------------
 
@@ -46,18 +66,18 @@ CREATE TABLE IF NOT EXISTS `bar` (
   `unitsSold` int(11) NOT NULL,
   `totalSales` int(11) NOT NULL,
   `product` varchar(50) NOT NULL,
-  `transactionDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `transactionDate` date NOT NULL,
+  `totalCost` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=80 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=106 ;
 
 --
 -- Dumping data for table `bar`
 --
 
-INSERT INTO `bar` (`id`, `openingStock`, `closingStock`, `purchases`, `unitsSold`, `totalSales`, `product`, `transactionDate`) VALUES
-(77, 10, 4, 40, 46, 6900, '3', '2012-08-28 11:23:55'),
-(78, 10, 30, 50, 30, 4500, '3', '2012-08-28 11:24:09'),
-(79, 20, 20, 100, 100, 15000, '3', '2012-08-28 11:24:46');
+INSERT INTO `bar` (`id`, `openingStock`, `closingStock`, `purchases`, `unitsSold`, `totalSales`, `product`, `transactionDate`, `totalCost`) VALUES
+(104, 100, 34, 444, 510, 76500, '3', '2012-08-30', 51000),
+(105, 100, 54, 44, 90, 9000, '4', '2012-08-30', 4500);
 
 -- --------------------------------------------------------
 
@@ -66,22 +86,24 @@ INSERT INTO `bar` (`id`, `openingStock`, `closingStock`, `purchases`, `unitsSold
 --
 
 CREATE TABLE IF NOT EXISTS `butchery` (
-  `openingStock` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `purchases` int(11) NOT NULL,
   `waste` int(11) NOT NULL,
   `closingStock` int(11) NOT NULL,
-  PRIMARY KEY (`openingStock`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10001 ;
+  `transactionDate` date NOT NULL,
+  `amountSold` int(11) NOT NULL,
+  `totalSales` int(11) NOT NULL,
+  `openingStock` int(11) NOT NULL,
+  `totalCost` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10015 ;
 
 --
 -- Dumping data for table `butchery`
 --
 
-INSERT INTO `butchery` (`openingStock`, `purchases`, `waste`, `closingStock`) VALUES
-(54, 4, 44, 4),
-(333, 3333, 33, 33333),
-(9999, 999999999, 99, 2147483647),
-(10000, 222, 2, 22);
+INSERT INTO `butchery` (`id`, `purchases`, `waste`, `closingStock`, `transactionDate`, `amountSold`, `totalSales`, `openingStock`, `totalCost`) VALUES
+(10014, 250, 100, 50, '2012-08-08', 100, 38000, 0, 40000);
 
 -- --------------------------------------------------------
 
@@ -123,16 +145,20 @@ CREATE TABLE IF NOT EXISTS `products` (
   `Description` varchar(50) NOT NULL,
   `buyingPrice` int(11) NOT NULL,
   `sellingPrice` int(11) NOT NULL,
-  `businessUnit` varchar(30) NOT NULL DEFAULT 'undefined',
+  `businessUnit` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`id`, `product`, `Description`, `buyingPrice`, `sellingPrice`, `businessUnit`) VALUES
-(3, 'Alvaro', '', 100, 150, 'bar');
+(3, 'Alvaro', '', 100, 150, 'bar'),
+(4, 'Mango Juice', '', 50, 100, 'bar'),
+(5, 'meat', '', 200, 380, 'butchery'),
+(6, 'candles', '', 50, 100, 'rooms'),
+(7, 'soap', '', 50, 100, 'rooms');
 
 -- --------------------------------------------------------
 
@@ -145,7 +171,7 @@ CREATE TABLE IF NOT EXISTS `restaurant` (
   `amountRecieved` int(11) NOT NULL,
   `dateRecieved` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
 -- Dumping data for table `restaurant`
@@ -160,7 +186,30 @@ INSERT INTO `restaurant` (`id`, `amountRecieved`, `dateRecieved`) VALUES
 (14, 44, '2012-09-03'),
 (15, 400, '2012-08-01'),
 (16, 400, '2012-08-01'),
-(17, 444444, '2012-09-05');
+(17, 444444, '2012-09-05'),
+(18, 7700, '2012-08-15');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `roomcosts`
+--
+
+CREATE TABLE IF NOT EXISTS `roomcosts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `product` int(11) NOT NULL,
+  `amount` int(11) NOT NULL,
+  `datePurchased` date NOT NULL,
+  `noOfItems` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+
+--
+-- Dumping data for table `roomcosts`
+--
+
+INSERT INTO `roomcosts` (`id`, `product`, `amount`, `datePurchased`, `noOfItems`) VALUES
+(27, 6, 50, '2012-08-09', 0);
 
 -- --------------------------------------------------------
 
@@ -173,7 +222,7 @@ CREATE TABLE IF NOT EXISTS `rooms` (
   `roomNumber` int(11) NOT NULL,
   `roomType` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `rooms`
@@ -181,7 +230,9 @@ CREATE TABLE IF NOT EXISTS `rooms` (
 
 INSERT INTO `rooms` (`id`, `roomNumber`, `roomType`) VALUES
 (1, 401, 1),
-(2, 407, 2);
+(2, 407, 2),
+(3, 402, 1),
+(4, 408, 2);
 
 -- --------------------------------------------------------
 
