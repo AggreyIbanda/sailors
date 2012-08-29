@@ -106,8 +106,11 @@ if (isset($_GET['status'])) {
                             <?php } ?>
                         </select></div>
                     <input value="<?php echo "$buyingPrice"; ?>" name="amount" type="hidden"/>
+                    <div><label>Number Of Items:</label></div>
+                    <div><input name="noOfItems"  type="text" class="required"/></div>
                     <div><label>Date of Purchase:</label></div>
                     <div><input onclick='scwShow(this,event);' id="bedate"  name="datePurchased" class="required"/></div>
+
                     <div><input type="submit" value="Save" /> </div>
                 </fieldset>
             </form>
@@ -119,7 +122,7 @@ if (isset($_GET['status'])) {
     }
 } else {//dissplay these links
     ?>
-        <div class="back"><a href="index.php" >&LT;&LT;&LT; Back</a></div>
+    <div class="back"><a href="index.php" >&LT;&LT;&LT; Back</a></div>
     <p style="margin: 100px 100px 100px 250px;"><a href="?status=rooms" >Record Room Occupation</a></p>
     <p style="margin: 100px 100px 100px 250px;"><a href="?status=cost">Record Items Purchased</a></p>
 <?php } ?>

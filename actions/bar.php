@@ -15,16 +15,18 @@ while ($count < count($_POST) / 4-1) {
     $closingStock = $_POST["closingStock$count"];
 //    calculating the total number of units sold
     $unitsSold = intval($openingStock) + intval($purchases) - intval($closingStock);
-//    clalculating total sales per item
-    $sql = "SELECT  sellingPrice FROM products WHERE id='$product_id' ";
+//    clalculating total sales and cost
+    $sql = "SELECT  * FROM products WHERE id='$product_id' ";
     $result = mysql_query($sql);
     $row = mysql_fetch_assoc($result);
     extract($row);
     $sellingPrice=$sellingPrice;
+    $buyingPrice=$buyingPrice;
     $totalSales = $unitsSold * intval($sellingPrice);
+    $totalCost = $unitsSold * intval($buyingPrice);
 //saving all the details to the database
-    $query = "INSERT INTO $tbl_name (product,openingStock, purchases , closingStock,unitsSold,totalSales,transactionDate)
-                        VALUES ('$product_id','$openingStock', '$purchases', '$closingStock','$unitsSold','$totalSales','$transactionDate')";
+    $query = "INSERT INTO $tbl_name (product,openingStock, purchases , closingStock,unitsSold,totalSales,transactionDate,totalCost)
+                        VALUES ('$product_id','$openingStock', '$purchases', '$closingStock','$unitsSold','$totalSales','$transactionDate','$totalCost')";
     if (mysql_query($query)) {
         $success_count++;
     } else {
