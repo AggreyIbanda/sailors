@@ -28,7 +28,7 @@
             <div class="templatemo_container">
                 <div id="templatemo_header">
                     <div id="templatemo_logo">
-                        <img src="images/logo.jpg" alt="SAILORS">
+                        <img src="images/logo.png" alt="SAILORS">
 <!--                        <h1 style="margin-top: 30px; ">SAILORS</h1>-->
 
                     </div>
