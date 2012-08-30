@@ -1,4 +1,12 @@
-<?php require_once 'header.php';?>
+<?php
+require_once 'header.php';
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+}
+if (isset($_SESSION['type'])) {
+    $type = $_SESSION['type'];
+}
+?>
 <div><a href="#" >Yesterday's Report</a></div>
 <div><a href="#">This Month's Report</a></div>
 <div><a href="#">Record New Rooms and Room Types</a></div>
@@ -8,4 +16,4 @@
 
 
 
-<?php require_once 'footer.php';?>
+<?php require_once 'footer.php'; ?>

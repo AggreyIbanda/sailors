@@ -29,10 +29,10 @@
                 <div id="templatemo_header">
                     <div id="templatemo_logo">
                         <img src="images/logo.png" alt="SAILORS">
-<!--                        <h1 style="margin-top: 30px; ">SAILORS</h1>-->
+                            <!--                        <h1 style="margin-top: 30px; ">SAILORS</h1>-->
 
                     </div>
-                    
+
                 </div>
             </div><!--  End Of Header  -->
         </div><!--  End Of Container  -->
@@ -51,39 +51,63 @@
                             <div class="templatemo_section_middle">
                                 <div id="menu">
                                     <ul class="tabs">
-                                        <li class="hasmore"><a href="admin.php"><span>HOME</span></a>
-                                        <li class="hasmore"><a href="#"><span>USERS</span></a>
-                                            <ul class="dropdown">
-                                                <li><a href="#">Add New</a></li>
-                                                <li><a href="#">View exiting users</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="hasmore"><a href="#"><span>SUMMARY</span></a>
-                                            <ul class="dropdown">
-                                                <li><a href="#">Yesterday's summary</a></li>
-                                                <li><a href="#">This month's summary</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="hasmore"><a href="#"><span>BUSINESS UNITS</span></a>
-                                            <ul class="dropdown">
-                                                <li><a href="#">Restaurant</a></li>
-                                                <li><a href="#">Bar</a></li>
-                                                <li><a href="#">Butchery</a></li>
-                                                <li><a href="#">Guest Houses</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="hasmore"><a href="#"><span>PRODUCTS &amp; PRICES</span></a>
-                                            <ul class="dropdown">
-                                                <li><a href="#">Add new products</a></li>
-                                                <li><a href="#">Change prices</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="hasmore"><a href="#"><span>PRODUCTS &amp; PRICES</span></a>
-                                            <ul class="dropdown">
-                                                <li><a href="#">Add new products</a></li>
-                                                <li><a href="#">Change prices</a></li>
-                                            </ul>
-                                        </li>
+                                        <?php
+                                        if (isset($_SESSION['username'])) {
+                                            if (isset($_SESSION['type'])) {
+                                                $type = $_SESSION['type'];
+                                                if ($type == 'admin') {
+                                        ?>
+                                                    <li class="hasmore"><a href="admin.php"><span>HOME</span></a> </li>
+                                                    <li class="hasmore"><a href="#"><span>USERS</span></a>
+                                                        <ul class="dropdown">
+                                                            <li><a href="#">Add New</a></li>
+                                                            <li><a href="#">View exiting users</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="hasmore"><a href="#"><span>SUMMARY</span></a>
+                                                        <ul class="dropdown">
+                                                            <li><a href="#">Yesterday's summary</a></li>
+                                                            <li><a href="#">This month's summary</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="hasmore"><a href="#"><span>BUSINESS UNITS</span></a>
+                                                        <ul class="dropdown">
+                                                            <li><a href="#">Restaurant</a></li>
+                                                            <li><a href="#">Bar</a></li>
+                                                            <li><a href="#">Butchery</a></li>
+                                                            <li><a href="#">Guest Houses</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="hasmore"><a href="#"><span>PRODUCTS &amp; PRICES</span></a>
+                                                        <ul class="dropdown">
+                                                            <li><a href="#">Add new products</a></li>
+                                                            <li><a href="#">Change prices</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="hasmore"><a href="#"><span>PRODUCTS &amp; PRICES</span></a>
+                                                        <ul class="dropdown">
+                                                            <li><a href="#">Add new products</a></li>
+                                                            <li><a href="#">Change prices</a></li>
+                                                        </ul>
+                                                    </li>
+                                        <?php
+                                                } else if ($type == 'staff') {
+                                        ?>
+                                                    <li class="hasmore"><a href="index.php"><span>HOME</span></a></li>
+                                                    <li class="hasmore"><a href="bar.php"><span>BAR</span></a></li>
+                                                    <li class="hasmore"><a href="butchery.php"><span>BUTCHERY</span></a></li>
+                                                    <li class="hasmore"><a href="restaurant.php"><span>RESTAURANT</span></a></li>
+                                                    <li class="hasmore"><a href="accommodation.php"><span>ROOMS</span></a></li>
+                                        <?php
+                                                }
+                                            } ?>
+                                                    <li class="hasmore"><a href="logout.php"><span>LOGOUT</span></a></li>
+                                        <?php
+                                        } else {
+                                        ?>
+                                            <li class="hasmore"><a href="login.php"><span>LOGIN</span></a></li>
+                                            <li class="hasmore"><a href="login.php?status=Admin"><span>ADMIN</span></a></li>
+                                        <?php } ?>
                                     </ul>
                                 </div>
 
