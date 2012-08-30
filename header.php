@@ -14,6 +14,7 @@
         <link href="style/style.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="scripts/sidemenu/fancydropdown.js"></script><!-- cascading menu code       -->
         <link rel="stylesheet" href="scripts/sidemenu/fancydropdown.css"/>
+        <script type="text/javascript" src="scripts/tables/js/tableActions.js"></script>
 
         <script language="javascript" type="text/javascript">
             function clearText(field){
@@ -61,7 +62,7 @@
                                                     <li class="hasmore"><a href="#"><span>USERS</span></a>
                                                         <ul class="dropdown">
                                                             <li><a href="signup.php">Add New</a></li>
-                                                            <li><a href="#">View exiting users</a></li>
+                                                            <li><a href="users.php">View exiting users</a></li>
                                                         </ul>
                                                     </li>
                                                     <li class="hasmore"><a href="#"><span>SUMMARY</span></a>
@@ -78,16 +79,18 @@
                                                             <li><a href="#">Guest Houses</a></li>
                                                         </ul>
                                                     </li>
+
                                                     <li class="hasmore"><a href="#"><span>PRODUCTS &amp; PRICES</span></a>
                                                         <ul class="dropdown">
                                                             <li><a href="#">Add new products</a></li>
                                                             <li><a href="#">Change prices</a></li>
+                                                            <li><a href="#">View Current Products and their Prices</a></li>
                                                         </ul>
                                                     </li>
-                                                    <li class="hasmore"><a href="#"><span>PRODUCTS &amp; PRICES</span></a>
+                                                    <li class="hasmore"><a href="#"><span>ROOMS</span></a>
                                                         <ul class="dropdown">
-                                                            <li><a href="#">Add new products</a></li>
-                                                            <li><a href="#">Change prices</a></li>
+                                                            <li><a href="roomDetails.php?need=new">Add new room</a></li>
+                                                            <li><a href="roomDetails.php?need=view">Current Rooms</a></li>
                                                         </ul>
                                                     </li>
                                         <?php
@@ -101,7 +104,7 @@
                                         <?php
                                                 }
                                             } ?>
-                                                    <li class="hasmore"><a href="logout.php"><span>LOGOUT</span></a></li>
+                                            <li class="hasmore"><a href="logout.php"><span>LOGOUT</span></a></li>
                                         <?php
                                         } else {
                                         ?>
