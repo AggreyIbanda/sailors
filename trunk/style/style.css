@@ -21,13 +21,7 @@ form label{
     font-weight: bold;
 }
 
-/*.images{
-    border-style: inset;
-    border-color: #8fdaff;
-    border-width: 2px;
-    padding: 5px;
-    margin: 5px;
-}*/
+
 .error{
     color: red;
     padding-left: 50px;
@@ -140,17 +134,20 @@ a{
 }
 
 a:hover{
-    color: deeppink;
-    text-transform: uppercase
+    color: darkorange;
+    margin: 10px;
+/*    text-transform: uppercase*/
 }
 
 #templatemo_background_section_top {
 
     width: 100%;
 
-    height: 163px;
+    height: 100px;
 
     background: url(../images/templatemo_top_section_bg.jpg) repeat-x;
+    
+    
 
 }
 
@@ -170,7 +167,10 @@ a:hover{
 .templatemo_container {
 
     width: 960px;
+    background-color: #ffffff;
     margin: auto;
+    
+    
 
 }
 
@@ -199,9 +199,10 @@ a:hover{
 
 
 #templatemo_header{
-    height: 163px;
+    height: 100px;
     width: 100%;
     background:url(../images/templatemo_header.jpg) no-repeat;
+    position: fixed;
 }
 
 
@@ -341,7 +342,7 @@ a:hover{
 
     width: 280px;
     height: 65px;
-    margin-top: 35px;
+    margin-top: 5px;
     margin-left: 40px;
     padding: 0;
     float: left;
@@ -373,105 +374,24 @@ a:hover{
 }
 
 #templatemo_content_area {
-
+background: whitesmoke;
     width: 100%;
-    background: url(../images/templatemo_content_bg.jpg) no-repeat top;
     overflow: hidden;
-
+    min-height: 450px;
+    padding:  10px 0px 0px 0px;
+    border: 2px groove #041A25;
+    margin-top: 10px;
 }
 
-#templatemo_left {
+/*#templatemo_left {
 
     float: left;
-    width : 235px;
+    width : 150px;
     margin: 0;
     padding: 0;
     min-height: 470px;
     color: black;
-}
-
-.templatemo_section {
-
-    width: 221px;
-    margin-top: 30px;
-    margin-left: 13px;
-    float: left;
-    display: inline;
-}
-
-.templatemo_section_top_pc {
-    width: 208px;
-    height: 24px;/* -47 For padding top */
-    background: url(../images/templatemo_left_section_top_pc.jpg) no-repeat;
-    font-size: 14px;
-    font-family: Arial;
-    font-weight: bold;
-    text-decoration: underline;
-    padding-top: 47px;
-    padding-left: 13px;
-
-}
-
-.templatemo_section_top_pic {
-    width: 208px;
-    height: 30px;/* -47 For padding top */
-    background: url(../images/templatemo_left_section_top_pic.jpg) no-repeat;
-    font-size: 14px;
-    font-family: Arial;
-    font-weight: bold;
-    text-decoration: underline;
-    padding-top: 47px;
-    padding-left: 13px;
-
-}
-
-.templatemo_section_middle {
-    width: 221px;
-    background: url(../images/templatemo_left_section_middle.jpg) repeat-y;
-}
-
-.templatemo_section_middle p {
-
-    font-size: 12px;
-    font-family: Arial;
-    text-align: justify;
-    margin: 0px 23px 10px 13px;
-    padding: 0;
-
-}
-
-.templatemo_section_middle ul {
-
-    margin: 0px 23px 10px 28px;
-    padding: 0px;
-    color: #fff;
-    list-style: square;
-    font-size: 12px;
-
-
-}
-
-.templatemo_section_middle ul li a {
-
-    color: #fff;
-    text-decoration: none;
-
-}
-
-.templatemo_section_middle ul li a:hover {
-
-    color: #6ff;
-    text-decoration: underline;
-
-}
-
-.templatemo_section_bottom {
-    width: 221px;
-    height: 16px;
-    background: url(../images/templatemo_left_section_bottom.jpg) repeat-y;
-    margin: 0;
-    padding: 0;
-}
+}*/
 
 .cleaner {
     clear: both;
@@ -485,8 +405,7 @@ a:hover{
 
 }
 
-#templatemo_right {
-
+/*#templatemo_right {
     float: right;
     width: 701px;
     background: #f3f3f3 url(../images/templatemo_right_bg.jpg) no-repeat bottom;
@@ -495,7 +414,7 @@ a:hover{
     display: inline;
     min-height: 450px;
 
-}
+}*/
 
 #templatemo_right p{
 
@@ -603,6 +522,7 @@ a:hover{
     overflow: hidden;
     padding-left: 5px;
     margin-bottom: 20px;
+    background-color: #041A25;
 }
 
 #templatemo_footer_section .templatemo_footer_section_box {
