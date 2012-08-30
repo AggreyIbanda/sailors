@@ -100,7 +100,12 @@
                                                     <li class="hasmore"><a href="bar.php"><span>BAR</span></a></li>
                                                     <li class="hasmore"><a href="butchery.php"><span>BUTCHERY</span></a></li>
                                                     <li class="hasmore"><a href="restaurant.php"><span>RESTAURANT</span></a></li>
-                                                    <li class="hasmore"><a href="accommodation.php"><span>ROOMS</span></a></li>
+                                                    <li class="hasmore"><a href="accommodation.php"><span>ROOMS</span></a>
+                                                        <ul class="dropdown">
+                                                            <li><a href="accommodation.php?status=rooms">Record Room Occupation</a></li>
+                                                            <li><a href="accommodation.php?status=cost">Record Items Purchased</a></li>
+                                                        </ul>
+                                                    </li>
                                         <?php
                                                 }
                                             } ?>
