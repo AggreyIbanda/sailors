@@ -12,10 +12,14 @@
         <script type="text/javascript" src="scripts/jquery.validate.min.js"></script>
         <script type="text/javascript" src="scripts/calendar.js"></script>
         <link href="style/style.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="scripts/sidemenu/fancydropdown.js"></script><!-- cascading menu code       -->
+        <link rel="stylesheet" href="scripts/sidemenu/fancydropdown.css"/>
+
         <script language="javascript" type="text/javascript">
             function clearText(field){
                 if (field.defaultValue == field.value) field.value = '';
                 else if (field.value == '') field.value = field.defaultValue;
+
             }
         </script>
     </head>
@@ -24,54 +28,14 @@
             <div class="templatemo_container">
                 <div id="templatemo_header">
                     <div id="templatemo_logo">
-<!--                        <img src="../images/home.png" alt="Rentals">-->
-                        <h1>SAILORS</h1>
+                        <img src="images/logo.jpg" alt="SAILORS">
+<!--                        <h1 style="margin-top: 30px; ">SAILORS</h1>-->
 
-                        <h2>Catering for all your food and accommodation needs</h2>
                     </div>
-                    <div id="templatemo_search_box">
-                        <form method="post" action="index.html">
-                            <label>Search:</label>
-                            <input name="search" value="Search..." type="text" onfocus="clearText(this)" onblur="clearText(this)" />
-                            <input class="button" type="submit" name="Search" value="GO"/>
-                        </form>
-                    </div>
-                    <div id="templatemo_menu">
-                        <div id="templatemo_menu_bg_l"></div>
-                        <div id="templatemo_menu_bg_r">
-                            <ul>
-                                <?php
-                                if (isset($_SESSION['username'])) {
-                                    if (isset($_SESSION['type'])) {
-                                        $type = $_SESSION['type'];
-                                        if ($type == 'admin') {
-                                ?>
-                                            <li><a href="admin.php"><b>HOME</b></a></li>
-                                <?php } else {
- ?>
-                                            <li><a href="index.php"><b>HOME</b></a></li>
-                                            <li><a href="bar.php"><b>BAR</b></a></li>
-                                            <li><a href="butchery.php"><b>BUTCHERY</b></a></li>
-                                            <li><a href="restaurant.php"><b>RESTAURANT</b></a></li>
-                                            <li><a href="accommodation.php"><b>ROOMS</b></a></li>
-                                <?php
-                                        }
-                                    }
-                                ?>
-
-
-                                    <li><a href="logout.php"><b>LOGOUT</b></a></li>
-<?php } else { ?>
-                                    <li><a href="index.php"><b>HOME</b></a></li>
-                                    <li><a href="login.php"><b>LOGIN</b></a></li>
-                                    <li><a href="login.php?status=Admin"><b>ADMIN</b></a></li>
-<?php } ?>
-
-                            </ul>
-                        </div>
-                    </div>
-                </div><!--  End Of Header  -->
-            </div><!--  End Of Container  -->
+                    
+                </div>
+            </div><!--  End Of Header  -->
+        </div><!--  End Of Container  -->
 
         </div><!--  End Of Back Ground Section Top  -->
 
@@ -83,19 +47,46 @@
 
                     <div id="templatemo_left">
                         <div class="templatemo_section">
-                            <div class="templatemo_section_top_pc">
-                                Sailors
 
-                            </div>
                             <div class="templatemo_section_middle">
-                                <p>Rentals brings landlords and tenants together, making it easy for users to search for rental houses
-                                    at their comfort.</p>
-                                <p>In addition, it enables landlords manage their plots, houses and tenants with ease.</p>
-                                <p></p>
-                                <p> For any assistance  <a href="#" style="color: #cccc00">Contact Admin here.</a> </p>
-                                <p>While all effort is made to ensure that the site is safe and secure; incase of suspicious
-                                    correspondence between you and another user you should contact admin.</p>
-                                <p>Thank you for visiting our website we hope you will enjoy our services.</p>
+                                <div id="menu">
+                                    <ul class="tabs">
+                                        <li class="hasmore"><a href="admin.php"><span>HOME</span></a>
+                                        <li class="hasmore"><a href="#"><span>USERS</span></a>
+                                            <ul class="dropdown">
+                                                <li><a href="#">Add New</a></li>
+                                                <li><a href="#">View exiting users</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="hasmore"><a href="#"><span>SUMMARY</span></a>
+                                            <ul class="dropdown">
+                                                <li><a href="#">Yesterday's summary</a></li>
+                                                <li><a href="#">This month's summary</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="hasmore"><a href="#"><span>BUSINESS UNITS</span></a>
+                                            <ul class="dropdown">
+                                                <li><a href="#">Restaurant</a></li>
+                                                <li><a href="#">Bar</a></li>
+                                                <li><a href="#">Butchery</a></li>
+                                                <li><a href="#">Guest Houses</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="hasmore"><a href="#"><span>PRODUCTS &amp; PRICES</span></a>
+                                            <ul class="dropdown">
+                                                <li><a href="#">Add new products</a></li>
+                                                <li><a href="#">Change prices</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="hasmore"><a href="#"><span>PRODUCTS &amp; PRICES</span></a>
+                                            <ul class="dropdown">
+                                                <li><a href="#">Add new products</a></li>
+                                                <li><a href="#">Change prices</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+
 
                                 <div class="cleaner_with_height">&nbsp;</div>
                             </div>
