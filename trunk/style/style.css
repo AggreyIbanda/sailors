@@ -9,14 +9,14 @@ form{
     color: darkorange;
     margin: 50px;
 }
-#templatemo_right img{
+/*#templatemo_right img{
 
     border-style: inset;
     border-color: #8fdaff;
     border-width: 2px;
-    /*    padding: 5px;*/
+        padding: 5px;
     margin:20px 30px 10px 10px;
-}
+}*/
 form label{
     font-weight: bold;
 }
@@ -199,7 +199,7 @@ a:hover{
 
 
 #templatemo_header{
-    height: 100px;
+    height: 90px;
     width: 100%;
     background:url(../images/templatemo_header.jpg) no-repeat;
     position: fixed;
@@ -378,7 +378,7 @@ background: whitesmoke;
     width: 100%;
     overflow: hidden;
     min-height: 450px;
-    padding:  10px 0px 0px 0px;
+    padding:  10px 0px 0px 20px;
     border: 2px groove #041A25;
     margin-top: 10px;
 }
@@ -419,7 +419,7 @@ background: whitesmoke;
 #templatemo_right p{
 
     margin: 0px 48px 10px 48px;
-    color: #595959;
+    color: #000000;
     text-align: justify;
 
 }

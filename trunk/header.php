@@ -60,7 +60,7 @@
                                                     <li class="hasmore"><a href="admin.php"><span>HOME</span></a> </li>
                                                     <li class="hasmore"><a href="#"><span>USERS</span></a>
                                                         <ul class="dropdown">
-                                                            <li><a href="#">Add New</a></li>
+                                                            <li><a href="signup.php">Add New</a></li>
                                                             <li><a href="#">View exiting users</a></li>
                                                         </ul>
                                                     </li>
