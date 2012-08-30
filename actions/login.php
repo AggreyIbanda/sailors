@@ -16,7 +16,7 @@ $count = mysql_num_rows($result);
 if ($count == 1) {
     session_register("username");
     $_SESSION['username'] = $username;
-    if ($username == Admin) {
+    if ($username == 'Admin') {
         $_SESSION['type'] = "admin";
         header("location:../admin.php");
     } else {
