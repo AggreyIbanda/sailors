@@ -7,14 +7,15 @@
         <meta name="keywords" content="rent, landlord, nyumba, kodisha, buy, house, room" />
         <meta name="description" content="rentals" />
         <link rel="stylesheet" href="../style/blitzer/jquery-ui-1.8.13.custom.css" type="text/css" />
+        <script type="text/javascript" src="scripts/jquery.validate.min.js"></script>
         <script type="text/javascript" src="scripts/jquery-1.6.min.js"></script>
         <script type="text/javascript" src="scripts/jquery-ui-1.8.13.custom.min.js"></script>
-        <script type="text/javascript" src="scripts/jquery.validate.min.js"></script>
         <script type="text/javascript" src="scripts/calendar.js"></script>
         <link href="style/style.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="scripts/sidemenu/fancydropdown.js"></script>     
         <link rel="stylesheet" href="scripts/sidemenu/fancydropdown.css"/>
-        <script type="text/javascript" src="scripts/tables/js/tableActions.js"></script>
+        <script type="text/javascript" src="scripts/tables/js/tableActions.js"> </script>
+
 
         <script language="javascript" type="text/javascript">
             function clearText(field){

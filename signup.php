@@ -1,5 +1,6 @@
 <?php include_once 'header.php';?>
 <script type="text/javascript">
+     jQuery.noConflict();
     jQuery(document).ready(function(){
         jQuery("form#signup").validate();
     });

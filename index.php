@@ -19,11 +19,10 @@ if (isset($_SESSION['username'])) {
     } ?>
 
 
-    <a href="signup.php" ><img alt="Add new User"  height="128px" width="128px" title="Add New User"src="images/user.png" /></a>
-    <a href="bar.php"><img alt="Bar" height="128px" width="128px" title="Record Bar Transactions"src="images/bar.png" /></a>
-    <a href="accommodation.php"><img alt="Add new User" height="128px" width="128px" title="Rooms Transactions"src="images/rooms.jpg" /></a>
-    <a href="restaurant.php"><img alt="Bar" height="128px" width="128px" title="Record Restaurant Transactions"src="images/restaurant.jpg" /></a>
-    <a href="butchery.php"><img alt="Bar" height="128px" width="128px" title="Record Butchery Transactions"src="images/butchery.JPG" /></a>
+    <a href="bar.php">Bar Transactions</a><br/>
+    <a href="accommodation.php">Guest Houses</a><br/>
+    <a href="restaurant.php">Restaurant Details</a><br/>
+    <a href="butchery.php">Butchery sales</a><br/>
 <?php
 } else {
 ?>
