@@ -12,7 +12,7 @@
         <script type="text/javascript" src="scripts/jquery.validate.min.js"></script>
         <script type="text/javascript" src="scripts/calendar.js"></script>
         <link href="style/style.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="scripts/sidemenu/fancydropdown.js"></script><!-- cascading menu code       -->
+        <script type="text/javascript" src="scripts/sidemenu/fancydropdown.js"></script>     
         <link rel="stylesheet" href="scripts/sidemenu/fancydropdown.css"/>
         <script type="text/javascript" src="scripts/tables/js/tableActions.js"></script>
 
