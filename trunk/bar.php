@@ -8,7 +8,8 @@ $result = mysql_query($sql);
 $count = mysql_num_rows($result);
 if ($count >= 1) {
 ?>
-    <script type="text/javascript">
+    <script type="text/javascript">    
+        jQuery.noConflict();
         $(document).ready(function() {
             $("form#bar").validate();
         });
@@ -36,8 +37,8 @@ if ($count >= 1) {
 
         <?php $count++;
         } ?>
-            <tr><td>Date:</td><td colspan=""> <input onclick='scwShow(this,event);' id="barDate"  name="transactionDate" class="required"/></td><td colspan="2"></td></tr>
-            <tr><td colspan="4"><input type="submit" value="Save" /></td></tr>
+        <tr><td>Date:</td><td colspan=""> <input onclick='scwShow(this,event);' id="barDate"  name="transactionDate" class="required"/></td><td colspan="2"></td></tr>
+        <tr><td colspan="4"><input type="submit" value="Save" /></td></tr>
     </table>
 </form>
 <?php
