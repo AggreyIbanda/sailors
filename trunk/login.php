@@ -29,4 +29,4 @@ if (isset($_GET['status'])) {
         </fieldset>
     </form>
 </div>
-{<?php require_once 'footer.php'; ?>
+<?php require_once 'footer.php'; ?>
