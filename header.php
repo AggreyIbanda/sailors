@@ -30,7 +30,7 @@
             <div class="templatemo_container">
                 <div id="templatemo_header">
                     <div id="templatemo_logo">
-                        <img src="images/logo.png" alt="SAILORS">
+                        <img src="images/logo.png" alt="SAILORS"/>
                             <!--                        <h1 style="margin-top: 30px; ">SAILORS</h1>-->
 
                     </div>
@@ -68,8 +68,8 @@
                                                     </li>
                                                     <li class="hasmore"><a href="#"><span>SUMMARY</span></a>
                                                         <ul class="dropdown">
-                                                            <li><a href="#">Yesterday's summary</a></li>
-                                                            <li><a href="#">This month's summary</a></li>
+                                                            <li><a href="summary.php">Yesterday's summary</a></li>
+                                                            <li><a href="summary.php">This month's summary</a></li>
                                                         </ul>
                                                     </li>
                                                     <li class="hasmore"><a href="#"><span>BUSINESS UNITS</span></a>
@@ -83,9 +83,8 @@
 
                                                     <li class="hasmore"><a href="#"><span>PRODUCTS &amp; PRICES</span></a>
                                                         <ul class="dropdown">
-                                                            <li><a href="#">Add new products</a></li>
-                                                            <li><a href="#">Change prices</a></li>
-                                                            <li><a href="#">View Current Products and their Prices</a></li>
+                                                            <li><a href="products.php?product=new">Add new products</a></li>
+                                                            <li><a href="products.php?product=view">View &int; Edit Existing Products</a></li>
                                                         </ul>
                                                     </li>
                                                     <li class="hasmore"><a href="#"><span>ROOMS</span></a>
