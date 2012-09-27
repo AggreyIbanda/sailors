@@ -49,15 +49,15 @@ if (isset($_GET['status'])) {
         if ($count >= 1) {
             ?>
             <script type="text/javascript">
-                $(document).ready(function() {
-                    $("form#accom").validate();
+                jQuery(document).ready(function(){
+                    jQuery("#accom").validationEngine();
                 });
             </script>
             <div class="back"><a href="?" >&LT;&LT;&LT; Back to previous page</a></div>
             <div class="lt"></div>
             <div class="lbox">
                 <form action="?save=1" method="POST" id="accom" enctype="multipart/form-data">
-                    <strong style="color: #1aa3e8; margin: 0px 0px 20px 30px;">Date:     <input onclick='scwShow(this,event);' id="accomdate"  name="dateOccupied" class="required"/></strong><br/>
+                    <strong style="color: #1aa3e8; margin: 0px 0px 20px 30px;">Date:     <input onclick='scwShow(this,event);' id="accomdate"  name="dateOccupied" class="validate[required] wide" /></strong><br/>
                     <strong style="color: #1aa3e8; margin: 0px 0px 20px 30px; text-transform: capitalize">Check the occupied rooms</strong><br/>
 
                     <?php
@@ -81,10 +81,10 @@ if (isset($_GET['status'])) {
     <?php } else if ($status == "cost") { ?>
         <!--record purchased items for rooms-->
         <script type="text/javascript">
-            $(document).ready(function() {
-                $("form#rooms").validate();
-            });
-        </script>
+    jQuery(document).ready(function(){
+        jQuery("#rooms").validationEngine();
+    });
+</script>
         <div class="back"><a href="?" >&LT;&LT;&LT; Back to previous page</a></div>
         <div class="lt"></div>
         <div class="lbox">
@@ -107,9 +107,9 @@ if (isset($_GET['status'])) {
                         </select></div>
                     <input value="<?php echo "$buyingPrice"; ?>" name="amount" type="hidden"/>
                     <div><label>Number Of Items:</label></div>
-                    <div><input name="noOfItems"  type="text" class="required"/></div>
+                    <div><input name="noOfItems"  type="text" class="validate[required] wide" id="noOfItems"/></div>
                     <div><label>Date of Purchase:</label></div>
-                    <div><input onclick='scwShow(this,event);' id="bedate"  name="datePurchased" class="required"/></div>
+                    <div><input onclick='scwShow(this,event);' id="bedate"  name="datePurchased" class="validate[required] wide" /></div>
 
                     <div><input type="submit" value="Save" /> </div>
                 </fieldset>

@@ -1,10 +1,9 @@
 <?php include_once 'header.php';?>
-<script type="text/javascript">
-     jQuery.noConflict();
-    jQuery(document).ready(function(){
-        jQuery("form#signup").validate();
-    });
 
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        jQuery("#signup").validationEngine();
+    });
 </script>
 <?php
 if (isset($_GET['status'])) {
@@ -24,11 +23,15 @@ if (isset($_GET['status'])) {
     <form id="signup" action="actions/signup.php" enctype="multipart/form-data" method="post">
         <fieldset><legend> New User</legend>
             <div><label>Username:</label></div>
-            <div><input type="text" name="username" class="required"/></div><br/>
+            <div><input type="text" name="username" class="validate[required] wide" id="username"/></div><br/>
+            <div><label>Full names:</label></div>
+            <div><input type="text" name="names" class="validate[required] wide" id="names"/></div><br/>
+            <div><label>National Id:</label></div>
+            <div><input type="text" name="nationalId" class="validate[required] wide" id="nationalId"/></div><br/>
             <div><label>Password:</label></div>
-            <div><input type="password" name="password" class="required"/></div><br/>
+            <div><input type="password" name="password" class="validate[required] wide" id="password"/></div><br/>
             <div><label>Re-enter Password:</label></div>
-            <div><input type="password" name="confirm_password" class="required"/></div><br/>
+            <div><input type="password" name="confirm_password" class="validate[required] wide" id="confirm_password"/></div><br/>
             <div><input type="submit" value="Save" /> </div>
         </fieldset>
     </form>

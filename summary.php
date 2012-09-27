@@ -10,8 +10,6 @@ if (isset($_SESSION['username'])) {
     <!--   bar -->
     <tr><th colspan="4">Bar</th></tr>
     <tr><th>Date</th><th>total Sales(Ksh)</th><th>Total Cost(Ksh)</th><th>Profit</th></tr>
-
-
     <?php
     $sql = "SELECT * FROM bar order by transactionDate desc";
     $result = mysql_query($sql) or die("Error executing '$sql':" . mysql_error());
@@ -82,11 +80,11 @@ if (isset($_SESSION['username'])) {
             <td><?php echo "$self"; ?></td>
             <td>
                 <?php
-                $totalSales=$single*400+$self*600;
+                $totalSales = $single * 400 + $self * 600;
                 echo "$totalSales";
                 ?>
             </td>
-            
+
         </tr>
     <?php } ?>
 
