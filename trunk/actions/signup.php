@@ -10,7 +10,7 @@ if ($checkuser != 0) {
     if ($password != $confirm_password) {
         header("location:../signup.php?status=wrongp");
     } else {
-        $insert_user = mysql_query("INSERT INTO login (username, password) VALUES ('$username', '$password')");
+        $insert_user = mysql_query("INSERT INTO login (username, password,nationalId,names) VALUES ('$username', '$password','$nationalId','$names')");
         if ($insert_user==True) {
             header("location:../users.php?status=saved&user=$username");
         } else {

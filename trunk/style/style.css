@@ -9,7 +9,7 @@ form{
     color: darkorange;
     margin: 50px;
 }
-/*#templatemo_right img{
+/*#templatemo_rigltht img{
 
     border-style: inset;
     border-color: #8fdaff;
@@ -63,7 +63,7 @@ em { font-weight: bold; padding-right: 1em; vertical-align: top; }
 
 .lt {
     height: 10px;
-    background: #6E6E6E url(../images/lt.gif) no-repeat;
+    background: #cccccc url(../images/lt.gif) no-repeat;
     margin: 10px 48px 0px 48px;
     width: 490px;
 }
@@ -146,6 +146,8 @@ a:hover{
     height: 100px;
 
     background: url(../images/templatemo_top_section_bg.jpg) repeat-x;
+/*    position: fixed;*/
+        
     
     
 

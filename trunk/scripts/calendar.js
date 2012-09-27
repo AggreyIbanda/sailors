@@ -456,6 +456,9 @@
     var scwOutOfMonthHide    = false;
 
     // Dates that are out of the specified range can be displayed at the start
+    // 
+    // 
+    // 
     // of the very first month and end of the very last.  Set
     // scwOutOfRangeDisable to  true  to disable these dates (or  false  to
     // allow their selection).
@@ -496,7 +499,7 @@
                             'width:0px;height:0px;}'                    +
             'table.scw      {padding:0px;visibility:hidden;'            +
                             'position:absolute;cursor:default;'         +
-                            'width:200px;top:0px;left:0px;'             +
+                            'width:350px;top:0px;left:0px;'             +
                             'z-index:' + (scwZindex+1)                  +
                             ';text-align:center;}'                      +
         '</style>'  );
@@ -598,7 +601,7 @@
                                         'color:             #000000;}'  +
             '/* Today selector */'                                      +
             'td.scwNow                  {background-color:  #990000;'   +
-                                        'color:             #FFFFFF;}'  +
+                                        'color:             #ffffff;}'  +
             '/* Clear Button */'                                        +
             'td.scwClear                {padding:           0px;}'      +
             'input.scwClear             {padding:           0px;'       +

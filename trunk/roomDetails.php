@@ -41,10 +41,10 @@ if (isset($_GET['need'])) {
         }
 ?>
 
+
 <script type="text/javascript">
-    jQuery.noConflict();
-    $(document).ready(function() {
-        $("form#nr").validate();
+    jQuery(document).ready(function(){
+        jQuery("#nr").validationEngine();
     });
 </script>
 <div class="back"><a href="?need=view" >&LT;&LT;&LT; See Existing Rooms</a></div>
@@ -53,8 +53,8 @@ if (isset($_GET['need'])) {
     <form id="nr" action="actions/newRoom.php" enctype="multipart/form-data" method="post">
         <fieldset><legend>New Room</legend>
             <div><label>Room Number:</label></div>
-            <div><input type="text" name="roomNumber"  class="required"/></div>
-            <div><select name="roomType" class="required">Select Room type:
+            <div><input type="text" name="roomNumber"  class="validate[required] wide" id="roomNumber"/></div>
+            <div><select name="roomType" class="validate[required] wide" id="roomType">Select Room type:
                     <option value="1">SINGLE</option>
                     <option value="2">SELF-CONTAINED</option>
                 </select>
