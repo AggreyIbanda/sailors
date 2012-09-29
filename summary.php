@@ -8,7 +8,7 @@ if (isset($_SESSION['username'])) {
 
 <table>
     <!--   bar -->
-    <tr><th colspan="4">Bar</th></tr>
+    <tr><th colspan="4">Bar </th></tr>
     <tr><th>Date</th><th>total Sales(Ksh)</th><th>Total Cost(Ksh)</th><th>Profit</th></tr>
     <?php
     $sql = "SELECT * FROM bar order by transactionDate desc";
