@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.1
+-- version 3.3.9
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 29, 2012 at 01:49 PM
--- Server version: 5.5.24-log
--- PHP Version: 5.3.13
+-- Generation Time: Sep 29, 2012 at 02:02 AM
+-- Server version: 5.5.8
+-- PHP Version: 5.3.5
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -32,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `accommodation` (
   `dateOccupied` date NOT NULL,
   `amountRecieved` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
 
 --
 -- Dumping data for table `accommodation`
@@ -42,15 +41,22 @@ INSERT INTO `accommodation` (`id`, `roomN0`, `dateOccupied`, `amountRecieved`) V
 (19, 401, '2012-08-30', 400),
 (20, 402, '2012-08-30', 400),
 (21, 407, '2012-08-30', 600),
-(22, 408, '2012-08-30', 600),
+(22, 408, '2012-09-28', 600),
 (23, 401, '2012-08-21', 400),
 (24, 401, '2012-08-21', 400),
 (25, 401, '2012-08-14', 400),
 (26, 402, '2012-08-14', 400),
-(27, 401, '2012-08-12', 400),
-(28, 402, '2012-08-12', 400),
+(27, 401, '2012-09-28', 400),
+(28, 402, '2012-09-28', 400),
 (29, 407, '2012-08-12', 600),
-(30, 408, '2012-08-12', 600);
+(30, 408, '2012-08-12', 600),
+(31, 401, '2012-08-17', 400),
+(32, 402, '2012-08-17', 400),
+(33, 402, '2012-08-29', 400),
+(34, 407, '2012-08-29', 600),
+(35, 408, '2012-09-01', 600),
+(36, 401, '2012-08-31', 400),
+(37, 402, '2012-08-31', 400);
 
 -- --------------------------------------------------------
 
@@ -69,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `bar` (
   `transactionDate` date NOT NULL,
   `totalCost` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=106 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=114 ;
 
 --
 -- Dumping data for table `bar`
@@ -77,7 +83,15 @@ CREATE TABLE IF NOT EXISTS `bar` (
 
 INSERT INTO `bar` (`id`, `openingStock`, `closingStock`, `purchases`, `unitsSold`, `totalSales`, `product`, `transactionDate`, `totalCost`) VALUES
 (104, 100, 34, 444, 510, 76500, '3', '2012-08-30', 51000),
-(105, 100, 54, 44, 90, 9000, '4', '2012-08-30', 4500);
+(105, 100, 54, 44, 90, 9000, '4', '2012-09-28', 4500),
+(106, 0, 0, 0, 0, 0, '3', '0000-00-00', 0),
+(107, 0, 0, 0, 0, 0, '4', '0000-00-00', 0),
+(108, 0, 0, 0, 0, 0, '3', '0000-00-00', 0),
+(109, 0, 0, 0, 0, 0, '4', '0000-00-00', 0),
+(110, 0, 0, 0, 0, 0, '3', '0000-00-00', 0),
+(111, 0, 0, 0, 0, 0, '4', '0000-00-00', 0),
+(112, 0, 0, 0, 0, 0, '3', '0000-00-00', 0),
+(113, 0, 0, 0, 0, 0, '4', '0000-00-00', 0);
 
 -- --------------------------------------------------------
 
@@ -103,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `butchery` (
 --
 
 INSERT INTO `butchery` (`id`, `purchases`, `waste`, `closingStock`, `transactionDate`, `amountSold`, `totalSales`, `openingStock`, `totalCost`) VALUES
-(10014, 250, 100, 50, '2012-08-08', 100, 38000, 0, 40000);
+(10014, 250, 100, 50, '2012-09-28', 100, 38000, 0, 40000);
 
 -- --------------------------------------------------------
 
@@ -202,14 +216,15 @@ CREATE TABLE IF NOT EXISTS `roomcosts` (
   `datePurchased` date NOT NULL,
   `noOfItems` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
 
 --
 -- Dumping data for table `roomcosts`
 --
 
 INSERT INTO `roomcosts` (`id`, `product`, `amount`, `datePurchased`, `noOfItems`) VALUES
-(27, 6, 50, '2012-08-09', 0);
+(27, 6, 50, '2012-08-09', 0),
+(28, 6, 50, '2012-08-31', 0);
 
 -- --------------------------------------------------------
 
@@ -222,7 +237,7 @@ CREATE TABLE IF NOT EXISTS `rooms` (
   `roomNumber` int(11) NOT NULL,
   `roomType` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `rooms`
@@ -254,7 +269,3 @@ CREATE TABLE IF NOT EXISTS `roomtypes` (
 INSERT INTO `roomtypes` (`id`, `roomType`, `amountPerNight`) VALUES
 (1, 'SINLE', 400),
 (2, 'SELF-CONTAINED', 600);
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
